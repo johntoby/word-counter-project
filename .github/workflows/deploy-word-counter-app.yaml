@@ -38,4 +38,4 @@ jobs:
 
       - name: Push Docker image to AWS ECR
         run: |
-          docker push ${{ secrets.ECR_REPOSITORY }}:latest
+          docker push 533267206237.dkr.ecr.us-east-1.amazonaws.com/jt-word-counter-project:latest
