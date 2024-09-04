@@ -20,5 +20,5 @@ function submitWord() {
   } in your text 🎖`);
 }
 
-//footer copyright text
+//footer copyright texts
 footerText.innerHTML = `copyright &copy; johntoby ${year}`;
