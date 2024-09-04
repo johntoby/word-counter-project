@@ -1,4 +1,4 @@
-# Use an official httpd image as a parent image
+# Use the official httpd image as a parent image
 FROM httpd:alpine
 
 # Copy the current directory contents into the container
