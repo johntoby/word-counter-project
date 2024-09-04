@@ -13,6 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Update DNS resolver
+        run: |
+          sudo sed -i 's/127.0.0.53/8.8.8.8/g' /etc/resolv.conf
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v3
         with:
@@ -22,7 +26,7 @@ jobs:
 
       - name: Log in to AWS ECR
         run: |
-          aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.ECR_REPOSITORY }} 
+          aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin 533267206237.dkr.ecr.us-east-1.amazonaws.com/jt-word-counter-project 
 
       - name: Build Docker image
         run: |
